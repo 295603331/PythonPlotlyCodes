@@ -52,7 +52,7 @@ layout = go.Layout(
         showticklabels = True, # True显示坐标标记
         linecolor = 'rgb(204, 204, 204)',# x轴线的颜色
         linewidth = 2,
-        autotick = False,  # True自动删除部分日期标示,False保持原状
+        tickmode = 'linear' ,  # True自动删除部分日期标示,False保持原状
         ticks = 'outside', # x轴上的刻度线，在图内or图外
         tickcolor = 'rgb(204, 204, 204)', # x轴上的刻度线的颜色
         tickwidth = 2, # x轴上的刻度线的宽度
@@ -89,7 +89,7 @@ for y_trace, label, color in zip(y_data, labels, colors):
                                   text = label + ' {}%'.format(y_trace[0]),
                                   font = dict(family = 'Arial',
                                             size = 16,
-                                            color = colors,),
+                                            color = color,),
                                   showarrow = False))
     # labeling the right_side of the plot
     annotations.append(dict(xref = 'paper', x = 0.95, y = y_trace[11],
@@ -97,7 +97,7 @@ for y_trace, label, color in zip(y_data, labels, colors):
                                   text = '{}%'.format(y_trace[11]),
                                   font = dict(family = 'Arial',
                                             size = 16,
-                                            color = colors,),
+                                            color = color,),
                                   showarrow = False))
 # Title
 annotations.append(dict(xref = 'paper', yref = 'paper', x = 0.0, y = 1.05,
